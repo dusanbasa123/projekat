@@ -1,0 +1,1 @@
+<li><a href="<?php echo Misc::link('admin/'); ?>">Dashboard</a>
