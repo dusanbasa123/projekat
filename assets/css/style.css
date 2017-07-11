@@ -1,0 +1,73 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.navbar {
+  
+}
+
+.nav-wrapper a {
+    display: inline-block;
+}
+
+
+/*register*/
+.r{
+    margin-bottom: 20px;
+}
+
+.fields {
+    font-weight: bold;
+}
+
+.r p span {
+    color: red;
+}
+
+.reg {
+    border-left: solid 1px #ccc;
+}
+
+.form-group span {
+    color: red;
+}
+
+/*register*/
+@media screen and (min-width: 992px){
+    .panel-body .form-inline select, .panel-body .form-inline input{
+        width: 280px;
+    }
+
+    .panel-body .form-inline button{
+        width: 280px;
+    }    
+}
+@media screen and (min-width: 320px){
+    .panel-body .form-inline button{
+        margin-top: 24px;
+    }
+}
+
+.mytabs{
+height: auto;
+white-space: normal;
+}
+.mytab{
+display: block;
+width: 100%;
+border-bottom: 1px solid #f0f0f0;
+}
+.mytab-content{
+width: 100%;
+background: #fcfcfc;
+border:1px solid #f0f0f0;
+}
+.myindicator{
+display: none;
+}
