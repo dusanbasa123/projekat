@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col m4">
+        <ul class="tabs mytabs">
+            <li class="tab mytab"><a class="active" href="#addNewSpecification">Add new</a></li>
+            <?php foreach ($DATA["specifications"] as $device): ?>
+            <li class="tab mytab"><a href="#device-<?php echo Misc::specialCharactersRemoveal($device->name); ?>"><?php echo $device->name; ?></a></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+    <div class="col m8">
+        <div id="addNewSpecification" class="col tab-content mytab-content">
+            <form action="<?php echo Misc::link("admin/specifications/store/"); ?>" method="POST">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="specifications" type="text" name="name" class="validate">
+                        <label for="specifications">Specification</label>
+                    </div>
+                </div>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </form>
+        </div>
+        <?php foreach ($DATA['specifications'] as $device): ?>
+        <div id="device-<?php echo Misc::specialCharactersRemoveal($device->name); ?>" class="col tab-content mytab-content">
+            <form action="<?php echo Misc::link("admin/specifications/edit/".$device->specification_id); ?>" method="POST">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="specifications" type="text" name="name" value="<?php echo htmlspecialchars($device->name); ?>" class="validate">
+                            <label for="specifications">Specification</label>
+                        </div>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </form>
+            <form action="<?php echo Misc::link("admin/specifications/delete/".$device->specification_id); ?>" method="POST">
+                <button class="btn waves-effect waves-light red" type="submit" name="action">DELETE
+                    </button>
+            </form>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
